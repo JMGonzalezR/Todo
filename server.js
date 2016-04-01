@@ -4,10 +4,14 @@
 
 'use strict';
 
+require('babel-register')({
+    presets: ['es2015', 'react'],
+});
+
 const Hapi = require('hapi');
 
 const server = new Hapi.Server();
-server.connection({port:3000});
+server.connection({host: 'localhost',port:3000});
 
 
 server.register([{
@@ -31,7 +35,8 @@ server.register([{
             path: '/{param*}',
             handler: {
                 directory: {
-                    path: 'client'
+                    path: 'client',
+                    index:['index.html']
                 }
             }
         });
@@ -40,7 +45,7 @@ server.register([{
             method: 'GET',
             path: '/',
             handler: {
-                view: 'Default'
+                view: 'Index'
             }
         });
 
