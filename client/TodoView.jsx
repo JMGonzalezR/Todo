@@ -27,9 +27,7 @@ class TodoView extends React.Component{
         })
     };
 
-    finishTodo(){
 
-    }
 
     onEnterKey(event){
 
@@ -40,7 +38,7 @@ class TodoView extends React.Component{
         let val = this.state.newTodo.trim();
 
         if(val){
-            this.props.todoList.push(<TodoItem todoDescription={val} onDestroy={this.deleteTodo.bind(this)}  id={this.props.todoList.length}/>);
+            this.props.todoList.push(<TodoItem todoDescription={val} onDestroy={this.deleteTodo.bind(this)}  id={this.props.todoList.length} key={this.props.todoList.length}/>);
             this.setState({newTodo:''});
         }
 
