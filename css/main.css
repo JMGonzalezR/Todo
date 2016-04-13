@@ -1,3 +1,37 @@
-li{
+.container{
+    width: 1170px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.todo-list{
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+}
+
+.item-view{
+    display:flex;
+    height: 40px;
+    align-items: center;
+    border-bottom: solid 1px #c8c8c8;
+    width: 50%;
+
+
+}
+.item-view >li{
+
     list-style: none;
+    text-transform: capitalize;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.item-view >button{
+
+
 }

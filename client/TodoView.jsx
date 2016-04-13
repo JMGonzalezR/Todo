@@ -45,16 +45,16 @@ class TodoView extends React.Component{
     };
 
     render() {
-        return(<div>
+        return(<div className="container">
             <input
-                className="new-todo"
+                className="new-todo form-control"
                 onKeyDown={this.onEnterKey.bind(this)}
                 value={this.state.newTodo}
                 onChange={this.handleChange.bind(this)}
                 placeholder="What you have to do?"
                 autoFocus={true}
             />
-            <div>
+            <div className="todo-list">
                 {this.state.todoList}
             </div>
         </div>)

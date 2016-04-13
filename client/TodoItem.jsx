@@ -34,8 +34,10 @@ class TodoItem extends React.Component{
         return(
             <div className="item-view">
                 <button onClick={this.onDelete.bind(this)}>delete</button>
-                <input type="checkbox" onClick={this.changeTodoStatus.bind(this)}>done</input>
                 <li>{this.props.todoDescription}</li>
+                <div className="checkbox">
+                    <input type="checkbox" onClick={this.changeTodoStatus.bind(this)}/>
+                </div>
             </div>
         )
     }
