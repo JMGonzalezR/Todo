@@ -11,6 +11,9 @@ class TodoItem extends React.Component{
 
     constructor(props){
         super(props);
+        this.state={
+            finished:false
+        }
 
     };
 
@@ -21,7 +24,7 @@ class TodoItem extends React.Component{
     };
     changeTodoStatus(){
         this.setState({
-            finished:!this.status.finished
+            finished:!this.state.finished
         });
     };
     onDelete(){
@@ -31,10 +34,17 @@ class TodoItem extends React.Component{
 
 
     render(){
+        let style = {};
+        if(this.state.finished){
+            style={
+                color: "#d9d9d9", textDecoration: "line-through"
+            }
+        }
+
         return(
             <div className="item-view">
                 <button onClick={this.onDelete.bind(this)}>delete</button>
-                <li>{this.props.todoDescription}</li>
+                <li style={style}>{this.props.todoDescription}</li>
                 <div className="checkbox">
                     <input type="checkbox" onClick={this.changeTodoStatus.bind(this)}/>
                 </div>

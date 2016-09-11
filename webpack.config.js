@@ -5,7 +5,7 @@
 'use strict';
 var path = require('path');
 module.exports = {
-    entry: './client/index.jsx', // Your appʼs entry point
+    entry: ['babel-polyfill','./client/index.jsx'], // Your appʼs entry point
     output: {
         path: __dirname + '/client',
         filename: 'bundle.js'
@@ -24,4 +24,5 @@ module.exports = {
             }
         ]
     }
+
 };
